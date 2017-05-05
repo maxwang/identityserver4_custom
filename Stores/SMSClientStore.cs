@@ -30,7 +30,7 @@ namespace CustomDbProfileService2.Stores
 				AccessTokenLifetime = 60 * 60 * 2,
 				//RequireClientSecret = false,
 				ClientSecrets = { new Secret(result.ClientSecrets) },
-				//AllowedScopes = { "api" }
+				AllowedScopes = { "api" }
 			} : null;
 
 

@@ -39,7 +39,10 @@ namespace CustomDbProfileService2.Stores
 		//scope and role do it later
 		private ICollection<Scope> GetApiScopes(string scopes)
 		{
-			return null;
+			return new List<Scope>
+			{
+				new Scope("api")
+			};
 		}
 
 		private ICollection<Secret> GetApiSecrets(string apiSecrets)

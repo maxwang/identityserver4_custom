@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace CustomDbProfileService2.Stores
 {
-    public abstract class SMSStoreBase
-    {
-		protected readonly Id4Context db;
+	public abstract class SMSStoreBase : SMSISBaseClass
+	{
+		//protected readonly Id4Context db;
 
-		public SMSStoreBase(Id4Context context)
+		//public SMSStoreBase(Id4Context context)
+		//{
+		//	this.db = context;
+		//}
+		public SMSStoreBase(Id4Context context) : base(context)
 		{
-			this.db = context;
 		}
 	}
 }

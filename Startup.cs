@@ -15,6 +15,8 @@ using System.Configuration;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using CustomDbProfileService2.Stores;
+using IdentityServer4.Validation;
+using CustomDbProfileService2.Validation;
 
 namespace CustomDbProfileService2
 {
@@ -48,6 +50,17 @@ namespace CustomDbProfileService2
 
 			//ResourceStore
 			builder.Services.AddTransient<IResourceStore, SMSResourceStore>();
+
+			//validation 
+
+			//Request token validator
+			//builder.Services.AddTransient<ITokenRequestValidator, SMSTokenRequestValidator>();
+
+			//Token validator
+			//builder.Services.AddTransient<ITokenValidator, SMSTokenValidator>();
+
+
+			builder.Services.AddTransient<ICustomAuthorizeRequestValidator, SMSCustomAuthorizeRequestValidator>();
 
 			builder.AddTemporarySigningCredential();
 
